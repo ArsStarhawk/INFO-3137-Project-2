@@ -4,27 +4,41 @@ namespace DocumentBuilderLibrary
 {
     public class JBuilder : IBuilder
     {
-        private JBranch root;
-        private List<JBranch> list;
+        private JBranch _root;
+        private Stack<JBranch> _stack;
 
-        public void BuildBranch(string name)
+        //When creating a Composite, the builder should maintain a reference to the last opened
+        // branch At Builder creation, this should be the root Branch
+
+        public JBuilder()
         {
-            throw new System.NotImplementedException();
+            _root = new JBranch();
+            _stack = new Stack<JBranch>();
+            _stack.Push(_root);
+        }
+
+
+        public void BuildBranch(string name)  //aka BuildComposite
+        {
+            JBranch node = new JBranch();
+            _stack.Peek().AddChild(node);
+            _stack.Push(node);
         }
 
         public void BuildLeaf(string name, string content)
         {
-            throw new System.NotImplementedException();
+            JLeaf leaf = new JLeaf(name, content);
+            _stack.Peek().AddChild(leaf);
         }
 
         public void CloseBranch()
         {
-            throw new System.NotImplementedException();
+            _stack.Pop();
         }
 
         public IComposite GetDocument()
         {
-            throw new System.NotImplementedException();
+            return _root;
         }
     }
 }

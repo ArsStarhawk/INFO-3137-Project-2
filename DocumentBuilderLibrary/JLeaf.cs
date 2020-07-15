@@ -2,8 +2,18 @@
 {
     public class JLeaf : IComposite
     {
-        private string name;
-        private string content;
+        private string _name;
+        private string _content;
+
+        public JLeaf(string name, string content)
+        {
+            _name = name;
+            _content = content;
+        }
+
+
+
+
 
         public void AddChild(IComposite child)
         {
@@ -12,7 +22,7 @@
 
         public string Print(int depth)
         {
-            throw new System.NotImplementedException();
+            //Printing a composite should return a string representing its full content
         }
     }
 }

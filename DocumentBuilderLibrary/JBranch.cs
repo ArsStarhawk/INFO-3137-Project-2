@@ -4,8 +4,8 @@ namespace DocumentBuilderLibrary
 {
     public class JBranch : IComposite
     {
-        private List<IComposite> list;
-        private string name;
+        private Stack<IComposite> _stack;
+        private string _name;
 
         public void AddChild(IComposite child)
         {

@@ -2,12 +2,17 @@
 {
     public class XLeaf: IComposite
     {
-        private string name;
-        private string content;
+        private string _name;
+        private string _content;
+
+        public XLeaf(string name, string content)
+        {
+            _name = name;
+            _content = content;
+        }
 
         public void AddChild(IComposite child)
         {
-            throw new System.NotImplementedException();
         }
 
         public string Print(int depth)

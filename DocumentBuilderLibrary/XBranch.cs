@@ -4,8 +4,8 @@ namespace DocumentBuilderLibrary
 {
     public class XBranch : IComposite
     {
-        private List<IComposite> list;
-        private string name;
+        private Stack<IComposite> _children;
+        private string _name;
 
 
         public void AddChild(IComposite child)
@@ -15,7 +15,8 @@ namespace DocumentBuilderLibrary
 
         public string Print(int depth)
         {
-            throw new System.NotImplementedException();
+            //form all the string shit?
+            return "butts";
         }
     }
 }

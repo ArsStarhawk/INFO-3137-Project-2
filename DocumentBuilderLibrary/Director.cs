@@ -4,6 +4,24 @@
     {
         private IBuilder builder;
 
+        private string name { get; set; }
+        private string content { get; set; }
+
+        public Director(string mode)
+        {
+            if (mode.Equals("JSON"))
+            {
+                builder = new JBuilder();
+            }
+            else
+            {
+                builder = new XBuilder();
+            }
+        }
+
+
+
+
         public void BuildBranch()
         {
             throw new System.NotImplementedException();
