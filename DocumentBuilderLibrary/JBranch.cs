@@ -22,7 +22,7 @@ namespace DocumentBuilderLibrary
         public string Print(int depth)
         {
 
-            string indent = new string(' ', depth *2);
+            string indent = new string(' ', depth *3);
             string rtnStr;
 
             rtnStr = _name.Equals("root") 

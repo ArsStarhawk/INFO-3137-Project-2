@@ -20,7 +20,7 @@ namespace INFO_3137_Project_2
 
             do
             {
-                Console.Write('>');
+                Console.Write("\n >");
                 input = Console.ReadLine();
 
                 selection = input.Contains(':') ? input.Remove(input.IndexOf(':')).ToUpper() : input.ToUpper();
@@ -54,6 +54,14 @@ namespace INFO_3137_Project_2
                             break;
                         }
 
+                        if (String.IsNullOrEmpty(input.Substring(input.IndexOf(':') + 1)) || !input.Contains(':'))
+                        {
+                            Console.WriteLine("\nInvalid input. For Usage, type 'Help'\n");
+                            break;
+                        }
+
+
+
                         director._name = input.Substring(input.IndexOf(':') + 1);
                         director.BuildBranch();
                         break;
@@ -72,9 +80,18 @@ namespace INFO_3137_Project_2
                         }
 
                         int firstDelim = input.IndexOf(':') + 1;
-                        int secondDelim = input.LastIndexOf(':'); 
-                        director._name = input.Substring(firstDelim, secondDelim - firstDelim);
-                        director._content = input.Substring(secondDelim + 1);
+                        int secondDelim = input.LastIndexOf(':');
+                        string name = input.Substring(firstDelim, secondDelim - firstDelim);
+                        string content = input.Substring(secondDelim + 1);
+
+                        if (string.IsNullOrEmpty(name.Trim()) || string.IsNullOrEmpty(content.Trim()))
+                        {
+                            Console.WriteLine("Invalid input. For Usage, type 'Help'");
+                            break;
+                        }
+
+                        director._name = name;
+                        director._content = content;
                         director.BuildLeaf();
                         break;
 
