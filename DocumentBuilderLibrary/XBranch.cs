@@ -1,4 +1,10 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * Author: James Kidd
+ * Date: July, 19 - 2020
+ * 
+ */
+
+using System.Collections.Generic;
 
 namespace DocumentBuilderLibrary
 {
@@ -29,7 +35,7 @@ namespace DocumentBuilderLibrary
                rtnStr += child.Print(depth+1);
             }
 
-            rtnStr += $"\n{indent}</{_name}>\n";
+            rtnStr += $"\n{indent}</{_name}>";
             return rtnStr;
         }
     }

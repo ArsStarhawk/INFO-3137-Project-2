@@ -1,4 +1,10 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * Author: James Kidd
+ * Date: July, 19 - 2020
+ * 
+ */
+
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DocumentBuilderLibrary
@@ -23,9 +29,8 @@ namespace DocumentBuilderLibrary
         {
 
             string indent = new string(' ', depth *3);
-            string rtnStr;
 
-            rtnStr = _name.Equals("root") 
+            string rtnStr = _name.Equals("root") 
                 ? $"\n{indent}{{" 
                 : $"\n{indent} \"{_name}\":\n{indent}{{";
 

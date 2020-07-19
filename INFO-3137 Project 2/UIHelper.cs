@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: James Kidd
+ * Date: July, 19 - 2020
+ * 
+ */
+
+using System;
 
 namespace INFO_3137_Project_2
 {
@@ -15,8 +21,5 @@ namespace INFO_3137_Project_2
             Console.WriteLine("{0,-25}{1,-25}", "\tprint", "-Prints the document in its current state to the console.");
             Console.WriteLine("{0,-25}{1,-25}", "\texit", "-Exits the application.");
         }
-
-
-
     }
 }

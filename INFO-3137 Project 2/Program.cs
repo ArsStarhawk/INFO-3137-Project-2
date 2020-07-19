@@ -1,8 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/*
+ * Author: James Kidd
+ * Date: July, 19 - 2020
+ * 
+ */
+
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DocumentBuilderLibrary;
 
 namespace INFO_3137_Project_2
@@ -11,7 +14,6 @@ namespace INFO_3137_Project_2
     {
         static void Main(string[] args)
         {
-            string input = "";
             string selection = "";
             Director director = null;
 
@@ -21,7 +23,7 @@ namespace INFO_3137_Project_2
             do
             {
                 Console.Write("\n >");
-                input = Console.ReadLine();
+                string input = Console.ReadLine();
 
                 selection = input.Contains(':') ? input.Remove(input.IndexOf(':')).ToUpper() : input.ToUpper();
 
