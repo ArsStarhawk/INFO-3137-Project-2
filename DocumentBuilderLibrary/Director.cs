@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: James Kidd
+ * Date: July, 19 - 2020
+ * 
+ */
+
+using System;
 
 namespace DocumentBuilderLibrary
 {
@@ -11,7 +17,7 @@ namespace DocumentBuilderLibrary
 
         public Director(string mode)
         {
-            builder = mode.Equals("JSON") ? (IBuilder) new JBuilder() : new XBuilder();
+            builder = mode.Equals("JSON") ? (IBuilder)new JBuilder() : new XBuilder();
         }
 
         public void BuildBranch()

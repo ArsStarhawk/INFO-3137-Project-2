@@ -1,4 +1,10 @@
-﻿namespace DocumentBuilderLibrary
+﻿/*
+ * Author: James Kidd
+ * Date: July, 19 - 2020
+ * 
+ */
+
+namespace DocumentBuilderLibrary
 {
     public class JLeaf : IComposite
     {
@@ -17,7 +23,7 @@
 
         public string Print(int depth)
         {
-            string indent = new string(' ', depth *2);
+            string indent = new string(' ', depth *3);
             return $"\n{indent} \"{_name}\": \"{_content}\"";
         }
     }
