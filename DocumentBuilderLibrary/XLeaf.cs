@@ -18,9 +18,6 @@
         public string Print(int depth)
         {
             string indent = new string('\t', depth);
-
-
-
             return $"\n{indent}<{_name}>{_content}</{_name}>";
         }
     }

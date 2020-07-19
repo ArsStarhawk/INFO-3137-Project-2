@@ -11,24 +11,27 @@ namespace INFO_3137_Project_2
     {
         static void Main(string[] args)
         {
-            Director director = new Director("XML");
+            Director director = new Director("JSON");
             
-            director._name = "Team";
+            director._name = "branch1";
             director.BuildBranch();
 
-            director._name = "Position";
-            director._content = "Center";
+            director._name = "leaf1";
+            director._content = "content";
+            director.BuildLeaf();
+director.CloseBranch();
+            director._name = "leaf2";
+            director._content = "content";
             director.BuildLeaf();
 
-            director._name = "Player";
-            director._content = "Joe Blow";
-            director.BuildLeaf();
-
-            director.CloseBranch();
-            director.CloseBranch();
-            director.CloseBranch();
+          
 
             director.Print();
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
 
         }
     }

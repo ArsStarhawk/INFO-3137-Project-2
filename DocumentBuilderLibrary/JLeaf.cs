@@ -11,18 +11,14 @@
             _content = content;
         }
 
-
-
-
-
         public void AddChild(IComposite child)
         {
-            throw new System.NotImplementedException();
         }
 
         public string Print(int depth)
         {
-            return "butts";
+            string indent = new string(' ', depth *2);
+            return $"\n{indent} \"{_name}\": \"{_content}\"";
         }
     }
 }

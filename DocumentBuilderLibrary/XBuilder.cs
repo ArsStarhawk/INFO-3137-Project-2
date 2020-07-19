@@ -14,7 +14,6 @@ namespace DocumentBuilderLibrary
             _stack.Push(_root);
         }
 
-
         public void BuildBranch(string name)
         {
             XBranch node = new XBranch(name);

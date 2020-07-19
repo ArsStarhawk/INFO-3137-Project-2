@@ -7,16 +7,12 @@ namespace DocumentBuilderLibrary
         private JBranch _root;
         private Stack<JBranch> _stack;
 
-        //When creating a Composite, the builder should maintain a reference to the last opened
-        // branch At Builder creation, this should be the root Branch
-
         public JBuilder()
         {
-            _root = new JBranch("{");
+            _root = new JBranch("root");
             _stack = new Stack<JBranch>();
             _stack.Push(_root);
         }
-
 
         public void BuildBranch(string name)  //aka BuildComposite
         {
@@ -33,7 +29,10 @@ namespace DocumentBuilderLibrary
 
         public void CloseBranch()
         {
-            _stack.Pop();
+            if (_stack.Count != 1)
+            {
+                _stack.Pop();
+            }
         }
 
         public IComposite GetDocument()
