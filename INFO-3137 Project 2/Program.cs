@@ -73,14 +73,8 @@ namespace INFO_3137_Project_2
 
                         int firstDelim = input.IndexOf(':') + 1;
                         int secondDelim = input.LastIndexOf(':'); 
-
-                        string name = input.Substring(firstDelim, secondDelim - firstDelim);
-                        string content = input.Substring(secondDelim +1);
-
-
-
-                        director._name = name;
-                        director._content = content;
+                        director._name = input.Substring(firstDelim, secondDelim - firstDelim);
+                        director._content = input.Substring(secondDelim + 1);
                         director.BuildLeaf();
                         break;
 
