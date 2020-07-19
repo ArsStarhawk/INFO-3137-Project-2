@@ -12,7 +12,7 @@ namespace DocumentBuilderLibrary
 
         public JBuilder()
         {
-            _root = new JBranch();
+            _root = new JBranch("{");
             _stack = new Stack<JBranch>();
             _stack.Push(_root);
         }
@@ -20,7 +20,7 @@ namespace DocumentBuilderLibrary
 
         public void BuildBranch(string name)  //aka BuildComposite
         {
-            JBranch node = new JBranch();
+            JBranch node = new JBranch(name);
             _stack.Peek().AddChild(node);
             _stack.Push(node);
         }

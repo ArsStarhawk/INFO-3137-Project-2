@@ -1,40 +1,38 @@
-﻿namespace DocumentBuilderLibrary
+﻿using System;
+
+namespace DocumentBuilderLibrary
 {
     public class Director : IDirector
     {
         private IBuilder builder;
 
-        private string name { get; set; }
-        private string content { get; set; }
+        public string _name { get; set; }
+        public string _content { get; set; }
 
         public Director(string mode)
         {
-            if (mode.Equals("JSON"))
-            {
-                builder = new JBuilder();
-            }
-            else
-            {
-                builder = new XBuilder();
-            }
+            builder = mode.Equals("JSON") ? (IBuilder) new JBuilder() : new XBuilder();
         }
-
-
-
 
         public void BuildBranch()
         {
-            throw new System.NotImplementedException();
+            builder.BuildBranch(_name);
         }
 
         public void BuildLeaf()
         {
-            throw new System.NotImplementedException();
+            builder.BuildLeaf(_name, _content);
         }
 
         public void CloseBranch()
         {
-            throw new System.NotImplementedException();
+            builder.CloseBranch();
         }
+
+        public void Print()
+        {
+            Console.Write(builder.GetDocument().Print(0));
+        }
+
     }
 }

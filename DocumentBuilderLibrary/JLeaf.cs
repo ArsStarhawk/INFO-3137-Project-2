@@ -22,7 +22,7 @@
 
         public string Print(int depth)
         {
-            //Printing a composite should return a string representing its full content
+            return "butts";
         }
     }
 }

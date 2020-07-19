@@ -9,7 +9,7 @@ namespace DocumentBuilderLibrary
 
         public XBuilder()
         {
-            _root = new XBranch();
+            _root = new XBranch("root");
             _stack = new Stack<XBranch>();
             _stack.Push(_root);
         }
@@ -17,7 +17,7 @@ namespace DocumentBuilderLibrary
 
         public void BuildBranch(string name)
         {
-            XBranch node = new XBranch();
+            XBranch node = new XBranch(name);
             _stack.Peek().AddChild(node);
             _stack.Push(node);
         }
@@ -30,7 +30,10 @@ namespace DocumentBuilderLibrary
 
         public void CloseBranch()
         {
-            _stack.Pop();
+            if (_stack.Count != 1)
+            {
+                _stack.Pop();
+            }
         }
 
         public IComposite GetDocument()

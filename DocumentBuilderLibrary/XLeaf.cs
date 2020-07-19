@@ -17,7 +17,11 @@
 
         public string Print(int depth)
         {
-            throw new System.NotImplementedException();
+            string indent = new string('\t', depth);
+
+
+
+            return $"\n{indent}<{_name}>{_content}</{_name}>";
         }
     }
 }
