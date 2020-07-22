@@ -50,7 +50,7 @@ namespace INFO_3137_Project_2
 
                     case "BRANCH":
                         
-                        if(director == null) 
+                        if(director is null) 
                         {
                             Console.WriteLine("Error. Mode has not been set. For usage, type 'Help'");
                             break;
@@ -69,7 +69,7 @@ namespace INFO_3137_Project_2
                         break;
 
                     case "LEAF":
-                        if (director == null)
+                        if (director is null)
                         {
                             Console.WriteLine("Error. Mode has not been set. For usage, type 'Help'");
                             break;
@@ -86,7 +86,7 @@ namespace INFO_3137_Project_2
                         string name = input.Substring(firstDelim, secondDelim - firstDelim);
                         string content = input.Substring(secondDelim + 1);
 
-                        if (string.IsNullOrEmpty(name.Trim()) || string.IsNullOrEmpty(content.Trim()))
+                        if (String.IsNullOrWhiteSpace(name) || String.IsNullOrWhiteSpace(content))
                         {
                             Console.WriteLine("Invalid input. For Usage, type 'Help'");
                             break;
@@ -98,7 +98,7 @@ namespace INFO_3137_Project_2
                         break;
 
                     case "CLOSE":
-                        if (director == null)
+                        if (director is null)
                         {
                             Console.WriteLine("Error. Mode has not been set. For usage, type 'Help'");
                             break;
@@ -108,7 +108,7 @@ namespace INFO_3137_Project_2
                         break;
 
                     case "PRINT":
-                        if (director == null)
+                        if (director is null)
                         {
                             Console.WriteLine("Error. Mode has not been set. For usage, type 'Help'");
                             break;
